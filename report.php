@@ -19,7 +19,7 @@ $q_sem = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SEM' AND TO_CHAR 
 $q_sgk = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SGK' AND TO_CHAR LIKE '$tgl%'");
 $q_smr = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SMR' AND TO_CHAR LIKE '$tgl%'");
 $r_smr = mysqli_fetch_array($q_smr);
-echo $r_smr['TO_CHAR'];
+echo substr($r_smr['TO_CHAR'], 11);
 $q_stt = mysqli_query($connect,"SELECT * FROM sales WHERE STO='STT' AND TO_CHAR LIKE '$tgl%'");
 $q_tgg = mysqli_query($connect,"SELECT * FROM sales WHERE STO='TGG' AND TO_CHAR LIKE '$tgl%'");
 $q_tmd = mysqli_query($connect,"SELECT * FROM sales WHERE STO='TMD' AND TO_CHAR LIKE '$tgl%'");
