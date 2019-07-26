@@ -25,6 +25,7 @@ $end = strtotime('2019-07-26 03:00:00');
 $time= strtotime($r_smr['TO_CHAR']);
 // $time= substr($r_smr['TO_CHAR'], 11);
 echo $time;
+
 if($time >= $start && $time <= $end) {
  echo "ok";
 } else {
