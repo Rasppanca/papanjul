@@ -20,7 +20,7 @@ $q_sgk = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SGK' AND TO_CHAR 
 $q_smr = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SMR' AND TO_CHAR LIKE '$tgl%'");
 $r_smr = mysqli_fetch_array($q_smr);
 
-$start = strtotime('2019-07-26 00:00:00');
+ $start = strtotime('2019-07-26 00:00:00');
 $end = strtotime('2019-07-26 03:00:00');
 $time= strtotime($r_smr['TO_CHAR']);
 // $time= substr($r_smr['TO_CHAR'], 11);
