@@ -19,7 +19,18 @@ $q_sem = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SEM' AND TO_CHAR 
 $q_sgk = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SGK' AND TO_CHAR LIKE '$tgl%'");
 $q_smr = mysqli_query($connect,"SELECT * FROM sales WHERE STO='SMR' AND TO_CHAR LIKE '$tgl%'");
 $r_smr = mysqli_fetch_array($q_smr);
-echo substr($r_smr['TO_CHAR'], 11);
+
+$start = strtotime('2019-07-26 00:00:00');
+$end = strtotime('2019-07-26 03:00:00');
+$time= strtotime($r_smr['TO_CHAR']);
+// $time= substr($r_smr['TO_CHAR'], 11);
+echo $time;
+if($time >= $start && $time <= $end) {
+ echo "ok";
+} else {
+  echo "not ok";
+}
+
 $q_stt = mysqli_query($connect,"SELECT * FROM sales WHERE STO='STT' AND TO_CHAR LIKE '$tgl%'");
 $q_tgg = mysqli_query($connect,"SELECT * FROM sales WHERE STO='TGG' AND TO_CHAR LIKE '$tgl%'");
 $q_tmd = mysqli_query($connect,"SELECT * FROM sales WHERE STO='TMD' AND TO_CHAR LIKE '$tgl%'");
