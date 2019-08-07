@@ -5,7 +5,6 @@ include 'variabel.php';
 $connect = mysqli_connect("hswitelsmr.com", "u5234201_hs", "hswitelsmr", "u5234201_papanjul");
 $txt = '';
 
-
 //agn
 $q_agn = mysqli_query($connect,"SELECT * FROM sales WHERE STO='AGN' AND TO_CHAR LIKE '$tgl%'");
 $q_agn_kemarin = mysqli_query($connect,"SELECT * FROM sales WHERE STO='AGN' AND TO_CHAR LIKE '$tgl_kemarin%'");
@@ -2037,63 +2036,879 @@ while ($r_tsn = mysqli_fetch_array($q_tsn)) {
 	}
 }
 
-//menampilkan data jam kemarin
-echo "00/02 | ";
-echo $j_tsn_00_02_kemarin, "\n";
-echo "02/04 | ";
-echo $j_tsn_02_04_kemarin, "\n";
-echo "04/06 | ";
-echo $j_tsn_04_06_kemarin, "\n";
-echo "06/08 | ";
-echo $j_tsn_06_08_kemarin, "\n";
-echo "08/10 | ";
-echo $j_tsn_08_10_kemarin, "\n";
-echo "10/12 | ";
-echo $j_tsn_10_12_kemarin, "\n";
-echo "12/14 | ";
-echo $j_tsn_12_14_kemarin, "\n";
-echo "14/16 | ";
-echo $j_tsn_14_16_kemarin, "\n";
-echo "16/18 | ";
-echo $j_tsn_16_18_kemarin, "\n";
-echo "18/20 | ";
-echo $j_tsn_18_20_kemarin, "\n";
-echo "20/22 | ";
-echo $j_tsn_20_22_kemarin, "\n";
-echo "22/00 | ";
-echo $j_tsn_22_00_kemarin, "\n".chr(10);
+//TOTAL_KEMARIN_00_02
+$total_kemarin_00_02 = (
+	$j_agn_00_02_kemarin+
+	$j_bot_00_02_kemarin+
+	$j_lkt_00_02_kemarin+
+	$j_lmp_00_02_kemarin+
+	$j_lob_00_02_kemarin+
+	$j_mbd_00_02_kemarin+
+	$j_mla_00_02_kemarin+
+	$j_paa_00_02_kemarin+
+	$j_pll_00_02_kemarin+
+	$j_san_00_02_kemarin+
+	$j_sbr_00_02_kemarin+
+	$j_sem_00_02_kemarin+
+	$j_sgk_00_02_kemarin+
+	$j_smr_00_02_kemarin+
+	$j_stt_00_02_kemarin+
+	$j_tgg_00_02_kemarin+
+	$j_tmd_00_02_kemarin+
+	$j_tsn_00_02_kemarin
+);
 
+//TOTAL_00_02
+$total_00_02 = (
+	$j_agn_00_02+
+	$j_bot_00_02+
+	$j_lkt_00_02+
+	$j_lmp_00_02+
+	$j_lob_00_02+
+	$j_mbd_00_02+
+	$j_mla_00_02+
+	$j_paa_00_02+
+	$j_pll_00_02+
+	$j_san_00_02+
+	$j_sbr_00_02+
+	$j_sem_00_02+
+	$j_sgk_00_02+
+	$j_smr_00_02+
+	$j_stt_00_02+
+	$j_tgg_00_02+
+	$j_tmd_00_02+
+	$j_tsn_00_02
+);
+
+//TOTAL_KEMARIN_02_04
+$total_kemarin_02_04 = (
+	$j_agn_02_04_kemarin+
+	$j_bot_02_04_kemarin+
+	$j_lkt_02_04_kemarin+
+	$j_lmp_02_04_kemarin+
+	$j_lob_02_04_kemarin+
+	$j_mbd_02_04_kemarin+
+	$j_mla_02_04_kemarin+
+	$j_paa_02_04_kemarin+
+	$j_pll_02_04_kemarin+
+	$j_san_02_04_kemarin+
+	$j_sbr_02_04_kemarin+
+	$j_sem_02_04_kemarin+
+	$j_sgk_02_04_kemarin+
+	$j_smr_02_04_kemarin+
+	$j_stt_02_04_kemarin+
+	$j_tgg_02_04_kemarin+
+	$j_tmd_02_04_kemarin+
+	$j_tsn_02_04_kemarin
+);
+
+//TOTAL_02_04
+$total_02_04 = (
+	$j_agn_02_04+
+	$j_bot_02_04+
+	$j_lkt_02_04+
+	$j_lmp_02_04+
+	$j_lob_02_04+
+	$j_mbd_02_04+
+	$j_mla_02_04+
+	$j_paa_02_04+
+	$j_pll_02_04+
+	$j_san_02_04+
+	$j_sbr_02_04+
+	$j_sem_02_04+
+	$j_sgk_02_04+
+	$j_smr_02_04+
+	$j_stt_02_04+
+	$j_tgg_02_04+
+	$j_tmd_02_04+
+	$j_tsn_02_04
+);
+
+//TOTAL_KEMARIN_04_06
+$total_kemarin_04_06 = (
+	$j_agn_04_06_kemarin+
+	$j_bot_04_06_kemarin+
+	$j_lkt_04_06_kemarin+
+	$j_lmp_04_06_kemarin+
+	$j_lob_04_06_kemarin+
+	$j_mbd_04_06_kemarin+
+	$j_mla_04_06_kemarin+
+	$j_paa_04_06_kemarin+
+	$j_pll_04_06_kemarin+
+	$j_san_04_06_kemarin+
+	$j_sbr_04_06_kemarin+
+	$j_sem_04_06_kemarin+
+	$j_sgk_04_06_kemarin+
+	$j_smr_04_06_kemarin+
+	$j_stt_04_06_kemarin+
+	$j_tgg_04_06_kemarin+
+	$j_tmd_04_06_kemarin+
+	$j_tsn_04_06_kemarin
+);
+
+//TOTAL_04_06
+$total_04_06 = (
+	$j_agn_04_06+
+	$j_bot_04_06+
+	$j_lkt_04_06+
+	$j_lmp_04_06+
+	$j_lob_04_06+
+	$j_mbd_04_06+
+	$j_mla_04_06+
+	$j_paa_04_06+
+	$j_pll_04_06+
+	$j_san_04_06+
+	$j_sbr_04_06+
+	$j_sem_04_06+
+	$j_sgk_04_06+
+	$j_smr_04_06+
+	$j_stt_04_06+
+	$j_tgg_04_06+
+	$j_tmd_04_06+
+	$j_tsn_04_06
+);
+
+//TOTAL_KEMARIN_06_08
+$total_kemarin_06_08 = (
+	$j_agn_06_08_kemarin+
+	$j_bot_06_08_kemarin+
+	$j_lkt_06_08_kemarin+
+	$j_lmp_06_08_kemarin+
+	$j_lob_06_08_kemarin+
+	$j_mbd_06_08_kemarin+
+	$j_mla_06_08_kemarin+
+	$j_paa_06_08_kemarin+
+	$j_pll_06_08_kemarin+
+	$j_san_06_08_kemarin+
+	$j_sbr_06_08_kemarin+
+	$j_sem_06_08_kemarin+
+	$j_sgk_06_08_kemarin+
+	$j_smr_06_08_kemarin+
+	$j_stt_06_08_kemarin+
+	$j_tgg_06_08_kemarin+
+	$j_tmd_06_08_kemarin+
+	$j_tsn_06_08_kemarin
+);
+
+//TOTAL_06_08
+$total_06_08 = (
+	$j_agn_06_08+
+	$j_bot_06_08+
+	$j_lkt_06_08+
+	$j_lmp_06_08+
+	$j_lob_06_08+
+	$j_mbd_06_08+
+	$j_mla_06_08+
+	$j_paa_06_08+
+	$j_pll_06_08+
+	$j_san_06_08+
+	$j_sbr_06_08+
+	$j_sem_06_08+
+	$j_sgk_06_08+
+	$j_smr_06_08+
+	$j_stt_06_08+
+	$j_tgg_06_08+
+	$j_tmd_06_08+
+	$j_tsn_06_08
+);
+
+//TOTAL_KEMARIN_08_10
+$total_kemarin_08_10 = (
+	$j_agn_08_10_kemarin+
+	$j_bot_08_10_kemarin+
+	$j_lkt_08_10_kemarin+
+	$j_lmp_08_10_kemarin+
+	$j_lob_08_10_kemarin+
+	$j_mbd_08_10_kemarin+
+	$j_mla_08_10_kemarin+
+	$j_paa_08_10_kemarin+
+	$j_pll_08_10_kemarin+
+	$j_san_08_10_kemarin+
+	$j_sbr_08_10_kemarin+
+	$j_sem_08_10_kemarin+
+	$j_sgk_08_10_kemarin+
+	$j_smr_08_10_kemarin+
+	$j_stt_08_10_kemarin+
+	$j_tgg_08_10_kemarin+
+	$j_tmd_08_10_kemarin+
+	$j_tsn_08_10_kemarin
+);
+
+//TOTAL_08_10
+$total_08_10 = (
+	$j_agn_08_10+
+	$j_bot_08_10+
+	$j_lkt_08_10+
+	$j_lmp_08_10+
+	$j_lob_08_10+
+	$j_mbd_08_10+
+	$j_mla_08_10+
+	$j_paa_08_10+
+	$j_pll_08_10+
+	$j_san_08_10+
+	$j_sbr_08_10+
+	$j_sem_08_10+
+	$j_sgk_08_10+
+	$j_smr_08_10+
+	$j_stt_08_10+
+	$j_tgg_08_10+
+	$j_tmd_08_10+
+	$j_tsn_08_10
+);
+
+//TOTAL_KEMARIN_10_12
+$total_kemarin_10_12 = (
+	$j_agn_10_12_kemarin+
+	$j_bot_10_12_kemarin+
+	$j_lkt_10_12_kemarin+
+	$j_lmp_10_12_kemarin+
+	$j_lob_10_12_kemarin+
+	$j_mbd_10_12_kemarin+
+	$j_mla_10_12_kemarin+
+	$j_paa_10_12_kemarin+
+	$j_pll_10_12_kemarin+
+	$j_san_10_12_kemarin+
+	$j_sbr_10_12_kemarin+
+	$j_sem_10_12_kemarin+
+	$j_sgk_10_12_kemarin+
+	$j_smr_10_12_kemarin+
+	$j_stt_10_12_kemarin+
+	$j_tgg_10_12_kemarin+
+	$j_tmd_10_12_kemarin+
+	$j_tsn_10_12_kemarin
+);
+
+//TOTAL_10_12
+$total_10_12 = (
+	$j_agn_10_12+
+	$j_bot_10_12+
+	$j_lkt_10_12+
+	$j_lmp_10_12+
+	$j_lob_10_12+
+	$j_mbd_10_12+
+	$j_mla_10_12+
+	$j_paa_10_12+
+	$j_pll_10_12+
+	$j_san_10_12+
+	$j_sbr_10_12+
+	$j_sem_10_12+
+	$j_sgk_10_12+
+	$j_smr_10_12+
+	$j_stt_10_12+
+	$j_tgg_10_12+
+	$j_tmd_10_12+
+	$j_tsn_10_12
+);
+
+//TOTAL_KEMARIN_12_14
+$total_kemarin_12_14 = (
+	$j_agn_12_14_kemarin+
+	$j_bot_12_14_kemarin+
+	$j_lkt_12_14_kemarin+
+	$j_lmp_12_14_kemarin+
+	$j_lob_12_14_kemarin+
+	$j_mbd_12_14_kemarin+
+	$j_mla_12_14_kemarin+
+	$j_paa_12_14_kemarin+
+	$j_pll_12_14_kemarin+
+	$j_san_12_14_kemarin+
+	$j_sbr_12_14_kemarin+
+	$j_sem_12_14_kemarin+
+	$j_sgk_12_14_kemarin+
+	$j_smr_12_14_kemarin+
+	$j_stt_12_14_kemarin+
+	$j_tgg_12_14_kemarin+
+	$j_tmd_12_14_kemarin+
+	$j_tsn_12_14_kemarin
+);
+
+//TOTAL_12_14
+$total_12_14 = (
+	$j_agn_12_14+
+	$j_bot_12_14+
+	$j_lkt_12_14+
+	$j_lmp_12_14+
+	$j_lob_12_14+
+	$j_mbd_12_14+
+	$j_mla_12_14+
+	$j_paa_12_14+
+	$j_pll_12_14+
+	$j_san_12_14+
+	$j_sbr_12_14+
+	$j_sem_12_14+
+	$j_sgk_12_14+
+	$j_smr_12_14+
+	$j_stt_12_14+
+	$j_tgg_12_14+
+	$j_tmd_12_14+
+	$j_tsn_12_14
+);
+
+//TOTAL_KEMARIN_14_16
+$total_kemarin_14_16 = (
+	$j_agn_14_16_kemarin+
+	$j_bot_14_16_kemarin+
+	$j_lkt_14_16_kemarin+
+	$j_lmp_14_16_kemarin+
+	$j_lob_14_16_kemarin+
+	$j_mbd_14_16_kemarin+
+	$j_mla_14_16_kemarin+
+	$j_paa_14_16_kemarin+
+	$j_pll_14_16_kemarin+
+	$j_san_14_16_kemarin+
+	$j_sbr_14_16_kemarin+
+	$j_sem_14_16_kemarin+
+	$j_sgk_14_16_kemarin+
+	$j_smr_14_16_kemarin+
+	$j_stt_14_16_kemarin+
+	$j_tgg_14_16_kemarin+
+	$j_tmd_14_16_kemarin+
+	$j_tsn_14_16_kemarin
+);
+
+//TOTAL_14_16
+$total_14_16 = (
+	$j_agn_14_16+
+	$j_bot_14_16+
+	$j_lkt_14_16+
+	$j_lmp_14_16+
+	$j_lob_14_16+
+	$j_mbd_14_16+
+	$j_mla_14_16+
+	$j_paa_14_16+
+	$j_pll_14_16+
+	$j_san_14_16+
+	$j_sbr_14_16+
+	$j_sem_14_16+
+	$j_sgk_14_16+
+	$j_smr_14_16+
+	$j_stt_14_16+
+	$j_tgg_14_16+
+	$j_tmd_14_16+
+	$j_tsn_14_16
+);
+
+//TOTAL_KEMARIN_16_18
+$total_kemarin_16_18 = (
+	$j_agn_16_18_kemarin+
+	$j_bot_16_18_kemarin+
+	$j_lkt_16_18_kemarin+
+	$j_lmp_16_18_kemarin+
+	$j_lob_16_18_kemarin+
+	$j_mbd_16_18_kemarin+
+	$j_mla_16_18_kemarin+
+	$j_paa_16_18_kemarin+
+	$j_pll_16_18_kemarin+
+	$j_san_16_18_kemarin+
+	$j_sbr_16_18_kemarin+
+	$j_sem_16_18_kemarin+
+	$j_sgk_16_18_kemarin+
+	$j_smr_16_18_kemarin+
+	$j_stt_16_18_kemarin+
+	$j_tgg_16_18_kemarin+
+	$j_tmd_16_18_kemarin+
+	$j_tsn_16_18_kemarin
+);
+
+//TOTAL_16_18
+$total_16_18 = (
+	$j_agn_16_18+
+	$j_bot_16_18+
+	$j_lkt_16_18+
+	$j_lmp_16_18+
+	$j_lob_16_18+
+	$j_mbd_16_18+
+	$j_mla_16_18+
+	$j_paa_16_18+
+	$j_pll_16_18+
+	$j_san_16_18+
+	$j_sbr_16_18+
+	$j_sem_16_18+
+	$j_sgk_16_18+
+	$j_smr_16_18+
+	$j_stt_16_18+
+	$j_tgg_16_18+
+	$j_tmd_16_18+
+	$j_tsn_16_18
+);
+
+//TOTAL_KEMARIN_18_20
+$total_kemarin_18_20 = (
+	$j_agn_18_20_kemarin+
+	$j_bot_18_20_kemarin+
+	$j_lkt_18_20_kemarin+
+	$j_lmp_18_20_kemarin+
+	$j_lob_18_20_kemarin+
+	$j_mbd_18_20_kemarin+
+	$j_mla_18_20_kemarin+
+	$j_paa_18_20_kemarin+
+	$j_pll_18_20_kemarin+
+	$j_san_18_20_kemarin+
+	$j_sbr_18_20_kemarin+
+	$j_sem_18_20_kemarin+
+	$j_sgk_18_20_kemarin+
+	$j_smr_18_20_kemarin+
+	$j_stt_18_20_kemarin+
+	$j_tgg_18_20_kemarin+
+	$j_tmd_18_20_kemarin+
+	$j_tsn_18_20_kemarin
+);
+
+//TOTAL_18_20
+$total_18_20 = (
+	$j_agn_18_20+
+	$j_bot_18_20+
+	$j_lkt_18_20+
+	$j_lmp_18_20+
+	$j_lob_18_20+
+	$j_mbd_18_20+
+	$j_mla_18_20+
+	$j_paa_18_20+
+	$j_pll_18_20+
+	$j_san_18_20+
+	$j_sbr_18_20+
+	$j_sem_18_20+
+	$j_sgk_18_20+
+	$j_smr_18_20+
+	$j_stt_18_20+
+	$j_tgg_18_20+
+	$j_tmd_18_20+
+	$j_tsn_18_20
+);
+
+//TOTAL_KEMARIN_20_22
+$total_kemarin_20_22 = (
+	$j_agn_20_22_kemarin+
+	$j_bot_20_22_kemarin+
+	$j_lkt_20_22_kemarin+
+	$j_lmp_20_22_kemarin+
+	$j_lob_20_22_kemarin+
+	$j_mbd_20_22_kemarin+
+	$j_mla_20_22_kemarin+
+	$j_paa_20_22_kemarin+
+	$j_pll_20_22_kemarin+
+	$j_san_20_22_kemarin+
+	$j_sbr_20_22_kemarin+
+	$j_sem_20_22_kemarin+
+	$j_sgk_20_22_kemarin+
+	$j_smr_20_22_kemarin+
+	$j_stt_20_22_kemarin+
+	$j_tgg_20_22_kemarin+
+	$j_tmd_20_22_kemarin+
+	$j_tsn_20_22_kemarin
+);
+
+//TOTAL_20_22
+$total_20_22 = (
+	$j_agn_20_22+
+	$j_bot_20_22+
+	$j_lkt_20_22+
+	$j_lmp_20_22+
+	$j_lob_20_22+
+	$j_mbd_20_22+
+	$j_mla_20_22+
+	$j_paa_20_22+
+	$j_pll_20_22+
+	$j_san_20_22+
+	$j_sbr_20_22+
+	$j_sem_20_22+
+	$j_sgk_20_22+
+	$j_smr_20_22+
+	$j_stt_20_22+
+	$j_tgg_20_22+
+	$j_tmd_20_22+
+	$j_tsn_20_22
+);
+
+//TOTAL_KEMARIN_22_00
+$total_kemarin_22_00 = (
+	$j_agn_22_00_kemarin+
+	$j_bot_22_00_kemarin+
+	$j_lkt_22_00_kemarin+
+	$j_lmp_22_00_kemarin+
+	$j_lob_22_00_kemarin+
+	$j_mbd_22_00_kemarin+
+	$j_mla_22_00_kemarin+
+	$j_paa_22_00_kemarin+
+	$j_pll_22_00_kemarin+
+	$j_san_22_00_kemarin+
+	$j_sbr_22_00_kemarin+
+	$j_sem_22_00_kemarin+
+	$j_sgk_22_00_kemarin+
+	$j_smr_22_00_kemarin+
+	$j_stt_22_00_kemarin+
+	$j_tgg_22_00_kemarin+
+	$j_tmd_22_00_kemarin+
+	$j_tsn_22_00_kemarin
+);
+
+//TOTAL_22_00
+$total_22_00 = (
+	$j_agn_22_00+
+	$j_bot_22_00+
+	$j_lkt_22_00+
+	$j_lmp_22_00+
+	$j_lob_22_00+
+	$j_mbd_22_00+
+	$j_mla_22_00+
+	$j_paa_22_00+
+	$j_pll_22_00+
+	$j_san_22_00+
+	$j_sbr_22_00+
+	$j_sem_22_00+
+	$j_sgk_22_00+
+	$j_smr_22_00+
+	$j_stt_22_00+
+	$j_tgg_22_00+
+	$j_tmd_22_00+
+	$j_tsn_22_00
+);
 
 //tampilan text board telegram papanjul ^_^
+$txt .= ''.chr(10);
+$txt .= '‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡'.chr(10);
+$txt .= '             '.$tglindo.chr(10);
+$txt .= '         -|PERAMALAN|-     '.chr(10);
+$txt .= '‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡'.chr(10);
+$txt .= ' Reza Gamers Idaman'.chr(10);
+$txt .= '00:00-02:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_00_02_kemarin.'|   '.$j_agn_00_02.'|  '.($j_agn_00_02_kemarin-$j_agn_00_02).chr(10);
+$txt .= 'BOT|   '.$j_bot_00_02_kemarin.'|   '.$j_bot_00_02.'|  '.($j_bot_00_02_kemarin-$j_bot_00_02).chr(10);
+$txt .= 'LKT|   '.$j_lkt_00_02_kemarin.'|   '.$j_lkt_00_02.'|  '.($j_lkt_00_02_kemarin-$j_lkt_00_02).chr(10);
+$txt .= 'LMP|   '.$j_lmp_00_02_kemarin.'|   '.$j_lmp_00_02.'|  '.($j_lmp_00_02_kemarin-$j_lmp_00_02).chr(10);
+$txt .= 'LOB|   '.$j_lob_00_02_kemarin.'|   '.$j_lob_00_02.'|  '.($j_lob_00_02_kemarin-$j_lob_00_02).chr(10);
+$txt .= 'MBD|   '.$j_mbd_00_02_kemarin.'|   '.$j_mbd_00_02.'|  '.($j_mbd_00_02_kemarin-$j_mbd_00_02).chr(10);
+$txt .= 'MLA|   '.$j_mla_00_02_kemarin.'|   '.$j_mla_00_02.'|  '.($j_mla_00_02_kemarin-$j_mla_00_02).chr(10);
+$txt .= 'PAA|   '.$j_paa_00_02_kemarin.'|   '.$j_paa_00_02.'|  '.($j_paa_00_02_kemarin-$j_paa_00_02).chr(10);
+$txt .= 'PLL|   '.$j_pll_00_02_kemarin.'|   '.$j_pll_00_02.'|  '.($j_pll_00_02_kemarin-$j_pll_00_02).chr(10);
+$txt .= 'SAN|   '.$j_san_00_02_kemarin.'|   '.$j_san_00_02.'|  '.($j_san_00_02_kemarin-$j_san_00_02).chr(10);
+$txt .= 'SBR|   '.$j_sbr_00_02_kemarin.'|   '.$j_sbr_00_02.'|  '.($j_sbr_00_02_kemarin-$j_sbr_00_02).chr(10);
+$txt .= 'SEM|   '.$j_sem_00_02_kemarin.'|   '.$j_sem_00_02.'|  '.($j_sem_00_02_kemarin-$j_sem_00_02).chr(10);
+$txt .= 'SGK|   '.$j_sgk_00_02_kemarin.'|   '.$j_sgk_00_02.'|  '.($j_sgk_00_02_kemarin-$j_sgk_00_02).chr(10);
+$txt .= 'SMR|   '.$j_smr_00_02_kemarin.'|   '.$j_smr_00_02.'|  '.($j_smr_00_02_kemarin-$j_smr_00_02).chr(10);
+$txt .= 'STT|   '.$j_stt_00_02_kemarin.'|   '.$j_stt_00_02.'|  '.($j_stt_00_02_kemarin-$j_stt_00_02).chr(10);
+$txt .= 'TGG|   '.$j_tgg_00_02_kemarin.'|   '.$j_tgg_00_02.'|  '.($j_tgg_00_02_kemarin-$j_tgg_00_02).chr(10);
+$txt .= 'TMD|   '.$j_tmd_00_02_kemarin.'|   '.$j_tmd_00_02.'|  '.($j_tmd_00_02_kemarin-$j_tmd_00_02).chr(10);
+$txt .= 'TSN|   '.$j_tsn_00_02_kemarin.'|   '.$j_tsn_00_02.'|  '.($j_tsn_00_02_kemarin-$j_tsn_00_02).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_00_02.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_00_02.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
 
+$txt .= '02:00-04:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_02_04_kemarin.'|   '.$j_agn_02_04.'|  '.($j_agn_02_04_kemarin-$j_agn_02_04).chr(10);
+$txt .= 'BOT|   '.$j_bot_02_04_kemarin.'|   '.$j_bot_02_04.'|  '.($j_bot_02_04_kemarin-$j_bot_02_04).chr(10);
+$txt .= 'LKT|   '.$j_lkt_02_04_kemarin.'|   '.$j_lkt_02_04.'|  '.($j_lkt_02_04_kemarin-$j_lkt_02_04).chr(10);
+$txt .= 'LMP|   '.$j_lmp_02_04_kemarin.'|   '.$j_lmp_02_04.'|  '.($j_lmp_02_04_kemarin-$j_lmp_02_04).chr(10);
+$txt .= 'LOB|   '.$j_lob_02_04_kemarin.'|   '.$j_lob_02_04.'|  '.($j_lob_02_04_kemarin-$j_lob_02_04).chr(10);
+$txt .= 'MBD|   '.$j_mbd_02_04_kemarin.'|   '.$j_mbd_02_04.'|  '.($j_mbd_02_04_kemarin-$j_mbd_02_04).chr(10);
+$txt .= 'MLA|   '.$j_mla_02_04_kemarin.'|   '.$j_mla_02_04.'|  '.($j_mla_02_04_kemarin-$j_mla_02_04).chr(10);
+$txt .= 'PAA|   '.$j_paa_02_04_kemarin.'|   '.$j_paa_02_04.'|  '.($j_paa_02_04_kemarin-$j_paa_02_04).chr(10);
+$txt .= 'PLL|   '.$j_pll_02_04_kemarin.'|   '.$j_pll_02_04.'|  '.($j_pll_02_04_kemarin-$j_pll_02_04).chr(10);
+$txt .= 'SAN|   '.$j_san_02_04_kemarin.'|   '.$j_san_02_04.'|  '.($j_san_02_04_kemarin-$j_san_02_04).chr(10);
+$txt .= 'SBR|   '.$j_sbr_02_04_kemarin.'|   '.$j_sbr_02_04.'|  '.($j_sbr_02_04_kemarin-$j_sbr_02_04).chr(10);
+$txt .= 'SEM|   '.$j_sem_02_04_kemarin.'|   '.$j_sem_02_04.'|  '.($j_sem_02_04_kemarin-$j_sem_02_04).chr(10);
+$txt .= 'SGK|   '.$j_sgk_02_04_kemarin.'|   '.$j_sgk_02_04.'|  '.($j_sgk_02_04_kemarin-$j_sgk_02_04).chr(10);
+$txt .= 'SMR|   '.$j_smr_02_04_kemarin.'|   '.$j_smr_02_04.'|  '.($j_smr_02_04_kemarin-$j_smr_02_04).chr(10);
+$txt .= 'STT|   '.$j_stt_02_04_kemarin.'|   '.$j_stt_02_04.'|  '.($j_stt_02_04_kemarin-$j_stt_02_04).chr(10);
+$txt .= 'TGG|   '.$j_tgg_02_04_kemarin.'|   '.$j_tgg_02_04.'|  '.($j_tgg_02_04_kemarin-$j_tgg_02_04).chr(10);
+$txt .= 'TMD|   '.$j_tmd_02_04_kemarin.'|   '.$j_tmd_02_04.'|  '.($j_tmd_02_04_kemarin-$j_tmd_02_04).chr(10);
+$txt .= 'TSN|   '.$j_tsn_02_04_kemarin.'|   '.$j_tsn_02_04.'|  '.($j_tsn_02_04_kemarin-$j_tsn_02_04).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_02_04.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_02_04.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '04:00-06:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_04_06_kemarin.'|   '.$j_agn_04_06.'|  '.($j_agn_04_06_kemarin-$j_agn_04_06).chr(10);
+$txt .= 'BOT|   '.$j_bot_04_06_kemarin.'|   '.$j_bot_04_06.'|  '.($j_bot_04_06_kemarin-$j_bot_04_06).chr(10);
+$txt .= 'LKT|   '.$j_lkt_04_06_kemarin.'|   '.$j_lkt_04_06.'|  '.($j_lkt_04_06_kemarin-$j_lkt_04_06).chr(10);
+$txt .= 'LMP|   '.$j_lmp_04_06_kemarin.'|   '.$j_lmp_04_06.'|  '.($j_lmp_04_06_kemarin-$j_lmp_04_06).chr(10);
+$txt .= 'LOB|   '.$j_lob_04_06_kemarin.'|   '.$j_lob_04_06.'|  '.($j_lob_04_06_kemarin-$j_lob_04_06).chr(10);
+$txt .= 'MBD|   '.$j_mbd_04_06_kemarin.'|   '.$j_mbd_04_06.'|  '.($j_mbd_04_06_kemarin-$j_mbd_04_06).chr(10);
+$txt .= 'MLA|   '.$j_mla_04_06_kemarin.'|   '.$j_mla_04_06.'|  '.($j_mla_04_06_kemarin-$j_mla_04_06).chr(10);
+$txt .= 'PAA|   '.$j_paa_04_06_kemarin.'|   '.$j_paa_04_06.'|  '.($j_paa_04_06_kemarin-$j_paa_04_06).chr(10);
+$txt .= 'PLL|   '.$j_pll_04_06_kemarin.'|   '.$j_pll_04_06.'|  '.($j_pll_04_06_kemarin-$j_pll_04_06).chr(10);
+$txt .= 'SAN|   '.$j_san_04_06_kemarin.'|   '.$j_san_04_06.'|  '.($j_san_04_06_kemarin-$j_san_04_06).chr(10);
+$txt .= 'SBR|   '.$j_sbr_04_06_kemarin.'|   '.$j_sbr_04_06.'|  '.($j_sbr_04_06_kemarin-$j_sbr_04_06).chr(10);
+$txt .= 'SEM|   '.$j_sem_04_06_kemarin.'|   '.$j_sem_04_06.'|  '.($j_sem_04_06_kemarin-$j_sem_04_06).chr(10);
+$txt .= 'SGK|   '.$j_sgk_04_06_kemarin.'|   '.$j_sgk_04_06.'|  '.($j_sgk_04_06_kemarin-$j_sgk_04_06).chr(10);
+$txt .= 'SMR|   '.$j_smr_04_06_kemarin.'|   '.$j_smr_04_06.'|  '.($j_smr_04_06_kemarin-$j_smr_04_06).chr(10);
+$txt .= 'STT|   '.$j_stt_04_06_kemarin.'|   '.$j_stt_04_06.'|  '.($j_stt_04_06_kemarin-$j_stt_04_06).chr(10);
+$txt .= 'TGG|   '.$j_tgg_04_06_kemarin.'|   '.$j_tgg_04_06.'|  '.($j_tgg_04_06_kemarin-$j_tgg_04_06).chr(10);
+$txt .= 'TMD|   '.$j_tmd_04_06_kemarin.'|   '.$j_tmd_04_06.'|  '.($j_tmd_04_06_kemarin-$j_tmd_04_06).chr(10);
+$txt .= 'TSN|   '.$j_tsn_04_06_kemarin.'|   '.$j_tsn_04_06.'|  '.($j_tsn_04_06_kemarin-$j_tsn_04_06).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_04_06.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_04_06.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '06:00-08:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_06_08_kemarin.'|   '.$j_agn_06_08.'|  '.($j_agn_06_08_kemarin-$j_agn_06_08).chr(10);
+$txt .= 'BOT|   '.$j_bot_06_08_kemarin.'|   '.$j_bot_06_08.'|  '.($j_bot_06_08_kemarin-$j_bot_06_08).chr(10);
+$txt .= 'LKT|   '.$j_lkt_06_08_kemarin.'|   '.$j_lkt_06_08.'|  '.($j_lkt_06_08_kemarin-$j_lkt_06_08).chr(10);
+$txt .= 'LMP|   '.$j_lmp_06_08_kemarin.'|   '.$j_lmp_06_08.'|  '.($j_lmp_06_08_kemarin-$j_lmp_06_08).chr(10);
+$txt .= 'LOB|   '.$j_lob_06_08_kemarin.'|   '.$j_lob_06_08.'|  '.($j_lob_06_08_kemarin-$j_lob_06_08).chr(10);
+$txt .= 'MBD|   '.$j_mbd_06_08_kemarin.'|   '.$j_mbd_06_08.'|  '.($j_mbd_06_08_kemarin-$j_mbd_06_08).chr(10);
+$txt .= 'MLA|   '.$j_mla_06_08_kemarin.'|   '.$j_mla_06_08.'|  '.($j_mla_06_08_kemarin-$j_mla_06_08).chr(10);
+$txt .= 'PAA|   '.$j_paa_06_08_kemarin.'|   '.$j_paa_06_08.'|  '.($j_paa_06_08_kemarin-$j_paa_06_08).chr(10);
+$txt .= 'PLL|   '.$j_pll_06_08_kemarin.'|   '.$j_pll_06_08.'|  '.($j_pll_06_08_kemarin-$j_pll_06_08).chr(10);
+$txt .= 'SAN|   '.$j_san_06_08_kemarin.'|   '.$j_san_06_08.'|  '.($j_san_06_08_kemarin-$j_san_06_08).chr(10);
+$txt .= 'SBR|   '.$j_sbr_06_08_kemarin.'|   '.$j_sbr_06_08.'|  '.($j_sbr_06_08_kemarin-$j_sbr_06_08).chr(10);
+$txt .= 'SEM|   '.$j_sem_06_08_kemarin.'|   '.$j_sem_06_08.'|  '.($j_sem_06_08_kemarin-$j_sem_06_08).chr(10);
+$txt .= 'SGK|   '.$j_sgk_06_08_kemarin.'|   '.$j_sgk_06_08.'|  '.($j_sgk_06_08_kemarin-$j_sgk_06_08).chr(10);
+$txt .= 'SMR|   '.$j_smr_06_08_kemarin.'|   '.$j_smr_06_08.'|  '.($j_smr_06_08_kemarin-$j_smr_06_08).chr(10);
+$txt .= 'STT|   '.$j_stt_06_08_kemarin.'|   '.$j_stt_06_08.'|  '.($j_stt_06_08_kemarin-$j_stt_06_08).chr(10);
+$txt .= 'TGG|   '.$j_tgg_06_08_kemarin.'|   '.$j_tgg_06_08.'|  '.($j_tgg_06_08_kemarin-$j_tgg_06_08).chr(10);
+$txt .= 'TMD|   '.$j_tmd_06_08_kemarin.'|   '.$j_tmd_06_08.'|  '.($j_tmd_06_08_kemarin-$j_tmd_06_08).chr(10);
+$txt .= 'TSN|   '.$j_tsn_06_08_kemarin.'|   '.$j_tsn_06_08.'|  '.($j_tsn_06_08_kemarin-$j_tsn_06_08).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_06_08.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_06_08.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '08:00-10:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_08_10_kemarin.'|   '.$j_agn_08_10.'|  '.($j_agn_08_10_kemarin-$j_agn_08_10).chr(10);
+$txt .= 'BOT|   '.$j_bot_08_10_kemarin.'|   '.$j_bot_08_10.'|  '.($j_bot_08_10_kemarin-$j_bot_08_10).chr(10);
+$txt .= 'LKT|   '.$j_lkt_08_10_kemarin.'|   '.$j_lkt_08_10.'|  '.($j_lkt_08_10_kemarin-$j_lkt_08_10).chr(10);
+$txt .= 'LMP|   '.$j_lmp_08_10_kemarin.'|   '.$j_lmp_08_10.'|  '.($j_lmp_08_10_kemarin-$j_lmp_08_10).chr(10);
+$txt .= 'LOB|   '.$j_lob_08_10_kemarin.'|   '.$j_lob_08_10.'|  '.($j_lob_08_10_kemarin-$j_lob_08_10).chr(10);
+$txt .= 'MBD|   '.$j_mbd_08_10_kemarin.'|   '.$j_mbd_08_10.'|  '.($j_mbd_08_10_kemarin-$j_mbd_08_10).chr(10);
+$txt .= 'MLA|   '.$j_mla_08_10_kemarin.'|   '.$j_mla_08_10.'|  '.($j_mla_08_10_kemarin-$j_mla_08_10).chr(10);
+$txt .= 'PAA|   '.$j_paa_08_10_kemarin.'|   '.$j_paa_08_10.'|  '.($j_paa_08_10_kemarin-$j_paa_08_10).chr(10);
+$txt .= 'PLL|   '.$j_pll_08_10_kemarin.'|   '.$j_pll_08_10.'|  '.($j_pll_08_10_kemarin-$j_pll_08_10).chr(10);
+$txt .= 'SAN|   '.$j_san_08_10_kemarin.'|   '.$j_san_08_10.'|  '.($j_san_08_10_kemarin-$j_san_08_10).chr(10);
+$txt .= 'SBR|   '.$j_sbr_08_10_kemarin.'|   '.$j_sbr_08_10.'|  '.($j_sbr_08_10_kemarin-$j_sbr_08_10).chr(10);
+$txt .= 'SEM|   '.$j_sem_08_10_kemarin.'|   '.$j_sem_08_10.'|  '.($j_sem_08_10_kemarin-$j_sem_08_10).chr(10);
+$txt .= 'SGK|   '.$j_sgk_08_10_kemarin.'|   '.$j_sgk_08_10.'|  '.($j_sgk_08_10_kemarin-$j_sgk_08_10).chr(10);
+$txt .= 'SMR|   '.$j_smr_08_10_kemarin.'|   '.$j_smr_08_10.'|  '.($j_smr_08_10_kemarin-$j_smr_08_10).chr(10);
+$txt .= 'STT|   '.$j_stt_08_10_kemarin.'|   '.$j_stt_08_10.'|  '.($j_stt_08_10_kemarin-$j_stt_08_10).chr(10);
+$txt .= 'TGG|   '.$j_tgg_08_10_kemarin.'|   '.$j_tgg_08_10.'|  '.($j_tgg_08_10_kemarin-$j_tgg_08_10).chr(10);
+$txt .= 'TMD|   '.$j_tmd_08_10_kemarin.'|   '.$j_tmd_08_10.'|  '.($j_tmd_08_10_kemarin-$j_tmd_08_10).chr(10);
+$txt .= 'TSN|   '.$j_tsn_08_10_kemarin.'|   '.$j_tsn_08_10.'|  '.($j_tsn_08_10_kemarin-$j_tsn_08_10).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_08_10.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_08_10.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '10:00-12:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_10_12_kemarin.'|   '.$j_agn_10_12.'|  '.($j_agn_10_12_kemarin-$j_agn_10_12).chr(10);
+$txt .= 'BOT|   '.$j_bot_10_12_kemarin.'|   '.$j_bot_10_12.'|  '.($j_bot_10_12_kemarin-$j_bot_10_12).chr(10);
+$txt .= 'LKT|   '.$j_lkt_10_12_kemarin.'|   '.$j_lkt_10_12.'|  '.($j_lkt_10_12_kemarin-$j_lkt_10_12).chr(10);
+$txt .= 'LMP|   '.$j_lmp_10_12_kemarin.'|   '.$j_lmp_10_12.'|  '.($j_lmp_10_12_kemarin-$j_lmp_10_12).chr(10);
+$txt .= 'LOB|   '.$j_lob_10_12_kemarin.'|   '.$j_lob_10_12.'|  '.($j_lob_10_12_kemarin-$j_lob_10_12).chr(10);
+$txt .= 'MBD|   '.$j_mbd_10_12_kemarin.'|   '.$j_mbd_10_12.'|  '.($j_mbd_10_12_kemarin-$j_mbd_10_12).chr(10);
+$txt .= 'MLA|   '.$j_mla_10_12_kemarin.'|   '.$j_mla_10_12.'|  '.($j_mla_10_12_kemarin-$j_mla_10_12).chr(10);
+$txt .= 'PAA|   '.$j_paa_10_12_kemarin.'|   '.$j_paa_10_12.'|  '.($j_paa_10_12_kemarin-$j_paa_10_12).chr(10);
+$txt .= 'PLL|   '.$j_pll_10_12_kemarin.'|   '.$j_pll_10_12.'|  '.($j_pll_10_12_kemarin-$j_pll_10_12).chr(10);
+$txt .= 'SAN|   '.$j_san_10_12_kemarin.'|   '.$j_san_10_12.'|  '.($j_san_10_12_kemarin-$j_san_10_12).chr(10);
+$txt .= 'SBR|   '.$j_sbr_10_12_kemarin.'|   '.$j_sbr_10_12.'|  '.($j_sbr_10_12_kemarin-$j_sbr_10_12).chr(10);
+$txt .= 'SEM|   '.$j_sem_10_12_kemarin.'|   '.$j_sem_10_12.'|  '.($j_sem_10_12_kemarin-$j_sem_10_12).chr(10);
+$txt .= 'SGK|   '.$j_sgk_10_12_kemarin.'|   '.$j_sgk_10_12.'|  '.($j_sgk_10_12_kemarin-$j_sgk_10_12).chr(10);
+$txt .= 'SMR|   '.$j_smr_10_12_kemarin.'|   '.$j_smr_10_12.'|  '.($j_smr_10_12_kemarin-$j_smr_10_12).chr(10);
+$txt .= 'STT|   '.$j_stt_10_12_kemarin.'|   '.$j_stt_10_12.'|  '.($j_stt_10_12_kemarin-$j_stt_10_12).chr(10);
+$txt .= 'TGG|   '.$j_tgg_10_12_kemarin.'|   '.$j_tgg_10_12.'|  '.($j_tgg_10_12_kemarin-$j_tgg_10_12).chr(10);
+$txt .= 'TMD|   '.$j_tmd_10_12_kemarin.'|   '.$j_tmd_10_12.'|  '.($j_tmd_10_12_kemarin-$j_tmd_10_12).chr(10);
+$txt .= 'TSN|   '.$j_tsn_10_12_kemarin.'|   '.$j_tsn_10_12.'|  '.($j_tsn_10_12_kemarin-$j_tsn_10_12).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_10_12.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_10_12.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
 
 $txt .= '12:00-14:00'.chr(10);
 $txt .= '```'.chr(10);
-$txt .= 'STO|PRAGNOSA|REALISASI|DEV'.chr(10);
-$txt .= '--------------------------'.chr(10);
-$txt .= ' reza gamers idaman'.chr(10);
-
-$txt .= 'AGN|       '.$j_agn_12_14_kemarin.'|		 '.$j_agn_12_14.'|  '.($j_agn_12_14_kemarin-$j_agn_12_14).chr(10);
-$txt .= 'BOT|       '.$j_bot_12_14_kemarin.'|        '.$j_bot_12_14.'|  '.($j_bot_12_14_kemarin-$j_bot_12_14).chr(10);
-$txt .= 'LKT|       '.$j_lkt_12_14_kemarin.'|        '.$j_lkt_12_14.'|  '.($j_lkt_12_14_kemarin-$j_lkt_12_14).chr(10);
-$txt .= 'LMP|       '.$j_lmp_12_14_kemarin.'|        '.$j_lmp_12_14.'|  '.($j_lmp_12_14_kemarin-$j_lmp_12_14).chr(10);
-$txt .= 'LOB|       '.$j_lob_12_14_kemarin.'|        '.$j_lob_12_14.'|  '.($j_lob_12_14_kemarin-$j_lob_12_14).chr(10);
-$txt .= 'MBD|       '.$j_mbd_12_14_kemarin.'|        '.$j_mbd_12_14.'|  '.($j_mbd_12_14_kemarin-$j_mbd_12_14).chr(10);
-$txt .= 'MLA|       '.$j_mla_12_14_kemarin.'|        '.$j_mla_12_14.'|  '.($j_mla_12_14_kemarin-$j_mla_12_14).chr(10);
-$txt .= 'PAA|       '.$j_paa_12_14_kemarin.'|        '.$j_paa_12_14.'|  '.($j_paa_12_14_kemarin-$j_paa_12_14).chr(10);
-$txt .= 'PLL|       '.$j_pll_12_14_kemarin.'|        '.$j_pll_12_14.'|  '.($j_pll_12_14_kemarin-$j_pll_12_14).chr(10);
-$txt .= 'SAN|       '.$j_san_12_14_kemarin.'|        '.$j_san_12_14.'|  '.($j_san_12_14_kemarin-$j_san_12_14).chr(10);
-$txt .= 'SBR|       '.$j_sbr_12_14_kemarin.'|        '.$j_sbr_12_14.'|  '.($j_sbr_12_14_kemarin-$j_sbr_12_14).chr(10);
-$txt .= 'SEM|       '.$j_sem_12_14_kemarin.'|        '.$j_sem_12_14.'|  '.($j_sem_12_14_kemarin-$j_sem_12_14).chr(10);
-$txt .= 'SGK|       '.$j_sgk_12_14_kemarin.'|        '.$j_sgk_12_14.'|  '.($j_sgk_12_14_kemarin-$j_sgk_12_14).chr(10);
-$txt .= 'SMR|       '.$j_smr_12_14_kemarin.'|        '.$j_smr_12_14.'|  '.($j_smr_12_14_kemarin-$j_smr_12_14).chr(10);
-$txt .= 'STT|       '.$j_stt_12_14_kemarin.'|        '.$j_stt_12_14.'|  '.($j_stt_12_14_kemarin-$j_stt_12_14).chr(10);
-$txt .= 'TGG|       '.$j_tgg_12_14_kemarin.'|        '.$j_tgg_12_14.'|  '.($j_tgg_12_14_kemarin-$j_tgg_12_14).chr(10);
-$txt .= 'TMD|       '.$j_tmd_12_14_kemarin.'|        '.$j_tmd_12_14.'|  '.($j_tmd_12_14_kemarin-$j_tmd_12_14).chr(10);
-$txt .= 'TSN|       '.$j_tsn_12_14_kemarin.'|        '.$j_tsn_12_14.'|  '.($j_tsn_12_14_kemarin-$j_tsn_12_14).chr(10);
-$txt  .= '
-
-```';
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_12_14_kemarin.'|   '.$j_agn_12_14.'|  '.($j_agn_12_14_kemarin-$j_agn_12_14).chr(10);
+$txt .= 'BOT|   '.$j_bot_12_14_kemarin.'|   '.$j_bot_12_14.'|  '.($j_bot_12_14_kemarin-$j_bot_12_14).chr(10);
+$txt .= 'LKT|   '.$j_lkt_12_14_kemarin.'|   '.$j_lkt_12_14.'|  '.($j_lkt_12_14_kemarin-$j_lkt_12_14).chr(10);
+$txt .= 'LMP|   '.$j_lmp_12_14_kemarin.'|   '.$j_lmp_12_14.'|  '.($j_lmp_12_14_kemarin-$j_lmp_12_14).chr(10);
+$txt .= 'LOB|   '.$j_lob_12_14_kemarin.'|   '.$j_lob_12_14.'|  '.($j_lob_12_14_kemarin-$j_lob_12_14).chr(10);
+$txt .= 'MBD|   '.$j_mbd_12_14_kemarin.'|   '.$j_mbd_12_14.'|  '.($j_mbd_12_14_kemarin-$j_mbd_12_14).chr(10);
+$txt .= 'MLA|   '.$j_mla_12_14_kemarin.'|   '.$j_mla_12_14.'|  '.($j_mla_12_14_kemarin-$j_mla_12_14).chr(10);
+$txt .= 'PAA|   '.$j_paa_12_14_kemarin.'|   '.$j_paa_12_14.'|  '.($j_paa_12_14_kemarin-$j_paa_12_14).chr(10);
+$txt .= 'PLL|   '.$j_pll_12_14_kemarin.'|   '.$j_pll_12_14.'|  '.($j_pll_12_14_kemarin-$j_pll_12_14).chr(10);
+$txt .= 'SAN|   '.$j_san_12_14_kemarin.'|   '.$j_san_12_14.'|  '.($j_san_12_14_kemarin-$j_san_12_14).chr(10);
+$txt .= 'SBR|   '.$j_sbr_12_14_kemarin.'|   '.$j_sbr_12_14.'|  '.($j_sbr_12_14_kemarin-$j_sbr_12_14).chr(10);
+$txt .= 'SEM|   '.$j_sem_12_14_kemarin.'|   '.$j_sem_12_14.'|  '.($j_sem_12_14_kemarin-$j_sem_12_14).chr(10);
+$txt .= 'SGK|   '.$j_sgk_12_14_kemarin.'|   '.$j_sgk_12_14.'|  '.($j_sgk_12_14_kemarin-$j_sgk_12_14).chr(10);
+$txt .= 'SMR|   '.$j_smr_12_14_kemarin.'|   '.$j_smr_12_14.'|  '.($j_smr_12_14_kemarin-$j_smr_12_14).chr(10);
+$txt .= 'STT|   '.$j_stt_12_14_kemarin.'|   '.$j_stt_12_14.'|  '.($j_stt_12_14_kemarin-$j_stt_12_14).chr(10);
+$txt .= 'TGG|   '.$j_tgg_12_14_kemarin.'|   '.$j_tgg_12_14.'|  '.($j_tgg_12_14_kemarin-$j_tgg_12_14).chr(10);
+$txt .= 'TMD|   '.$j_tmd_12_14_kemarin.'|   '.$j_tmd_12_14.'|  '.($j_tmd_12_14_kemarin-$j_tmd_12_14).chr(10);
+$txt .= 'TSN|   '.$j_tsn_12_14_kemarin.'|   '.$j_tsn_12_14.'|  '.($j_tsn_12_14_kemarin-$j_tsn_12_14).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_12_14.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_12_14.chr(10);
 $contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '14:00-16:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_14_16_kemarin.'|   '.$j_agn_14_16.'|  '.($j_agn_14_16_kemarin-$j_agn_14_16).chr(10);
+$txt .= 'BOT|   '.$j_bot_14_16_kemarin.'|   '.$j_bot_14_16.'|  '.($j_bot_14_16_kemarin-$j_bot_14_16).chr(10);
+$txt .= 'LKT|   '.$j_lkt_14_16_kemarin.'|   '.$j_lkt_14_16.'|  '.($j_lkt_14_16_kemarin-$j_lkt_14_16).chr(10);
+$txt .= 'LMP|   '.$j_lmp_14_16_kemarin.'|   '.$j_lmp_14_16.'|  '.($j_lmp_14_16_kemarin-$j_lmp_14_16).chr(10);
+$txt .= 'LOB|   '.$j_lob_14_16_kemarin.'|   '.$j_lob_14_16.'|  '.($j_lob_14_16_kemarin-$j_lob_14_16).chr(10);
+$txt .= 'MBD|   '.$j_mbd_14_16_kemarin.'|   '.$j_mbd_14_16.'|  '.($j_mbd_14_16_kemarin-$j_mbd_14_16).chr(10);
+$txt .= 'MLA|   '.$j_mla_14_16_kemarin.'|   '.$j_mla_14_16.'|  '.($j_mla_14_16_kemarin-$j_mla_14_16).chr(10);
+$txt .= 'PAA|   '.$j_paa_14_16_kemarin.'|   '.$j_paa_14_16.'|  '.($j_paa_14_16_kemarin-$j_paa_14_16).chr(10);
+$txt .= 'PLL|   '.$j_pll_14_16_kemarin.'|   '.$j_pll_14_16.'|  '.($j_pll_14_16_kemarin-$j_pll_14_16).chr(10);
+$txt .= 'SAN|   '.$j_san_14_16_kemarin.'|   '.$j_san_14_16.'|  '.($j_san_14_16_kemarin-$j_san_14_16).chr(10);
+$txt .= 'SBR|   '.$j_sbr_14_16_kemarin.'|   '.$j_sbr_14_16.'|  '.($j_sbr_14_16_kemarin-$j_sbr_14_16).chr(10);
+$txt .= 'SEM|   '.$j_sem_14_16_kemarin.'|   '.$j_sem_14_16.'|  '.($j_sem_14_16_kemarin-$j_sem_14_16).chr(10);
+$txt .= 'SGK|   '.$j_sgk_14_16_kemarin.'|   '.$j_sgk_14_16.'|  '.($j_sgk_14_16_kemarin-$j_sgk_14_16).chr(10);
+$txt .= 'SMR|   '.$j_smr_14_16_kemarin.'|   '.$j_smr_14_16.'|  '.($j_smr_14_16_kemarin-$j_smr_14_16).chr(10);
+$txt .= 'STT|   '.$j_stt_14_16_kemarin.'|   '.$j_stt_14_16.'|  '.($j_stt_14_16_kemarin-$j_stt_14_16).chr(10);
+$txt .= 'TGG|   '.$j_tgg_14_16_kemarin.'|   '.$j_tgg_14_16.'|  '.($j_tgg_14_16_kemarin-$j_tgg_14_16).chr(10);
+$txt .= 'TMD|   '.$j_tmd_14_16_kemarin.'|   '.$j_tmd_14_16.'|  '.($j_tmd_14_16_kemarin-$j_tmd_14_16).chr(10);
+$txt .= 'TSN|   '.$j_tsn_14_16_kemarin.'|   '.$j_tsn_14_16.'|  '.($j_tsn_14_16_kemarin-$j_tsn_14_16).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_14_16.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_14_16.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+
+$txt .= '16:00-18:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_16_18_kemarin.'|   '.$j_agn_16_18.'|  '.($j_agn_16_18_kemarin-$j_agn_16_18).chr(10);
+$txt .= 'BOT|   '.$j_bot_16_18_kemarin.'|   '.$j_bot_16_18.'|  '.($j_bot_16_18_kemarin-$j_bot_16_18).chr(10);
+$txt .= 'LKT|   '.$j_lkt_16_18_kemarin.'|   '.$j_lkt_16_18.'|  '.($j_lkt_16_18_kemarin-$j_lkt_16_18).chr(10);
+$txt .= 'LMP|   '.$j_lmp_16_18_kemarin.'|   '.$j_lmp_16_18.'|  '.($j_lmp_16_18_kemarin-$j_lmp_16_18).chr(10);
+$txt .= 'LOB|   '.$j_lob_16_18_kemarin.'|   '.$j_lob_16_18.'|  '.($j_lob_16_18_kemarin-$j_lob_16_18).chr(10);
+$txt .= 'MBD|   '.$j_mbd_16_18_kemarin.'|   '.$j_mbd_16_18.'|  '.($j_mbd_16_18_kemarin-$j_mbd_16_18).chr(10);
+$txt .= 'MLA|   '.$j_mla_16_18_kemarin.'|   '.$j_mla_16_18.'|  '.($j_mla_16_18_kemarin-$j_mla_16_18).chr(10);
+$txt .= 'PAA|   '.$j_paa_16_18_kemarin.'|   '.$j_paa_16_18.'|  '.($j_paa_16_18_kemarin-$j_paa_16_18).chr(10);
+$txt .= 'PLL|   '.$j_pll_16_18_kemarin.'|   '.$j_pll_16_18.'|  '.($j_pll_16_18_kemarin-$j_pll_16_18).chr(10);
+$txt .= 'SAN|   '.$j_san_16_18_kemarin.'|   '.$j_san_16_18.'|  '.($j_san_16_18_kemarin-$j_san_16_18).chr(10);
+$txt .= 'SBR|   '.$j_sbr_16_18_kemarin.'|   '.$j_sbr_16_18.'|  '.($j_sbr_16_18_kemarin-$j_sbr_16_18).chr(10);
+$txt .= 'SEM|   '.$j_sem_16_18_kemarin.'|   '.$j_sem_16_18.'|  '.($j_sem_16_18_kemarin-$j_sem_16_18).chr(10);
+$txt .= 'SGK|   '.$j_sgk_16_18_kemarin.'|   '.$j_sgk_16_18.'|  '.($j_sgk_16_18_kemarin-$j_sgk_16_18).chr(10);
+$txt .= 'SMR|   '.$j_smr_16_18_kemarin.'|   '.$j_smr_16_18.'|  '.($j_smr_16_18_kemarin-$j_smr_16_18).chr(10);
+$txt .= 'STT|   '.$j_stt_16_18_kemarin.'|   '.$j_stt_16_18.'|  '.($j_stt_16_18_kemarin-$j_stt_16_18).chr(10);
+$txt .= 'TGG|   '.$j_tgg_16_18_kemarin.'|   '.$j_tgg_16_18.'|  '.($j_tgg_16_18_kemarin-$j_tgg_16_18).chr(10);
+$txt .= 'TMD|   '.$j_tmd_16_18_kemarin.'|   '.$j_tmd_16_18.'|  '.($j_tmd_16_18_kemarin-$j_tmd_16_18).chr(10);
+$txt .= 'TSN|   '.$j_tsn_16_18_kemarin.'|   '.$j_tsn_16_18.'|  '.($j_tsn_16_18_kemarin-$j_tsn_16_18).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_16_18.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_16_18.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '18:00-20:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_18_20_kemarin.'|   '.$j_agn_18_20.'|  '.($j_agn_18_20_kemarin-$j_agn_18_20).chr(10);
+$txt .= 'BOT|   '.$j_bot_18_20_kemarin.'|   '.$j_bot_18_20.'|  '.($j_bot_18_20_kemarin-$j_bot_18_20).chr(10);
+$txt .= 'LKT|   '.$j_lkt_18_20_kemarin.'|   '.$j_lkt_18_20.'|  '.($j_lkt_18_20_kemarin-$j_lkt_18_20).chr(10);
+$txt .= 'LMP|   '.$j_lmp_18_20_kemarin.'|   '.$j_lmp_18_20.'|  '.($j_lmp_18_20_kemarin-$j_lmp_18_20).chr(10);
+$txt .= 'LOB|   '.$j_lob_18_20_kemarin.'|   '.$j_lob_18_20.'|  '.($j_lob_18_20_kemarin-$j_lob_18_20).chr(10);
+$txt .= 'MBD|   '.$j_mbd_18_20_kemarin.'|   '.$j_mbd_18_20.'|  '.($j_mbd_18_20_kemarin-$j_mbd_18_20).chr(10);
+$txt .= 'MLA|   '.$j_mla_18_20_kemarin.'|   '.$j_mla_18_20.'|  '.($j_mla_18_20_kemarin-$j_mla_18_20).chr(10);
+$txt .= 'PAA|   '.$j_paa_18_20_kemarin.'|   '.$j_paa_18_20.'|  '.($j_paa_18_20_kemarin-$j_paa_18_20).chr(10);
+$txt .= 'PLL|   '.$j_pll_18_20_kemarin.'|   '.$j_pll_18_20.'|  '.($j_pll_18_20_kemarin-$j_pll_18_20).chr(10);
+$txt .= 'SAN|   '.$j_san_18_20_kemarin.'|   '.$j_san_18_20.'|  '.($j_san_18_20_kemarin-$j_san_18_20).chr(10);
+$txt .= 'SBR|   '.$j_sbr_18_20_kemarin.'|   '.$j_sbr_18_20.'|  '.($j_sbr_18_20_kemarin-$j_sbr_18_20).chr(10);
+$txt .= 'SEM|   '.$j_sem_18_20_kemarin.'|   '.$j_sem_18_20.'|  '.($j_sem_18_20_kemarin-$j_sem_18_20).chr(10);
+$txt .= 'SGK|   '.$j_sgk_18_20_kemarin.'|   '.$j_sgk_18_20.'|  '.($j_sgk_18_20_kemarin-$j_sgk_18_20).chr(10);
+$txt .= 'SMR|   '.$j_smr_18_20_kemarin.'|   '.$j_smr_18_20.'|  '.($j_smr_18_20_kemarin-$j_smr_18_20).chr(10);
+$txt .= 'STT|   '.$j_stt_18_20_kemarin.'|   '.$j_stt_18_20.'|  '.($j_stt_18_20_kemarin-$j_stt_18_20).chr(10);
+$txt .= 'TGG|   '.$j_tgg_18_20_kemarin.'|   '.$j_tgg_18_20.'|  '.($j_tgg_18_20_kemarin-$j_tgg_18_20).chr(10);
+$txt .= 'TMD|   '.$j_tmd_18_20_kemarin.'|   '.$j_tmd_18_20.'|  '.($j_tmd_18_20_kemarin-$j_tmd_18_20).chr(10);
+$txt .= 'TSN|   '.$j_tsn_18_20_kemarin.'|   '.$j_tsn_18_20.'|  '.($j_tsn_18_20_kemarin-$j_tsn_18_20).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_18_20.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_18_20.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '20:00-22:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_20_22_kemarin.'|   '.$j_agn_20_22.'|  '.($j_agn_20_22_kemarin-$j_agn_20_22).chr(10);
+$txt .= 'BOT|   '.$j_bot_20_22_kemarin.'|   '.$j_bot_20_22.'|  '.($j_bot_20_22_kemarin-$j_bot_20_22).chr(10);
+$txt .= 'LKT|   '.$j_lkt_20_22_kemarin.'|   '.$j_lkt_20_22.'|  '.($j_lkt_20_22_kemarin-$j_lkt_20_22).chr(10);
+$txt .= 'LMP|   '.$j_lmp_20_22_kemarin.'|   '.$j_lmp_20_22.'|  '.($j_lmp_20_22_kemarin-$j_lmp_20_22).chr(10);
+$txt .= 'LOB|   '.$j_lob_20_22_kemarin.'|   '.$j_lob_20_22.'|  '.($j_lob_20_22_kemarin-$j_lob_20_22).chr(10);
+$txt .= 'MBD|   '.$j_mbd_20_22_kemarin.'|   '.$j_mbd_20_22.'|  '.($j_mbd_20_22_kemarin-$j_mbd_20_22).chr(10);
+$txt .= 'MLA|   '.$j_mla_20_22_kemarin.'|   '.$j_mla_20_22.'|  '.($j_mla_20_22_kemarin-$j_mla_20_22).chr(10);
+$txt .= 'PAA|   '.$j_paa_20_22_kemarin.'|   '.$j_paa_20_22.'|  '.($j_paa_20_22_kemarin-$j_paa_20_22).chr(10);
+$txt .= 'PLL|   '.$j_pll_20_22_kemarin.'|   '.$j_pll_20_22.'|  '.($j_pll_20_22_kemarin-$j_pll_20_22).chr(10);
+$txt .= 'SAN|   '.$j_san_20_22_kemarin.'|   '.$j_san_20_22.'|  '.($j_san_20_22_kemarin-$j_san_20_22).chr(10);
+$txt .= 'SBR|   '.$j_sbr_20_22_kemarin.'|   '.$j_sbr_20_22.'|  '.($j_sbr_20_22_kemarin-$j_sbr_20_22).chr(10);
+$txt .= 'SEM|   '.$j_sem_20_22_kemarin.'|   '.$j_sem_20_22.'|  '.($j_sem_20_22_kemarin-$j_sem_20_22).chr(10);
+$txt .= 'SGK|   '.$j_sgk_20_22_kemarin.'|   '.$j_sgk_20_22.'|  '.($j_sgk_20_22_kemarin-$j_sgk_20_22).chr(10);
+$txt .= 'SMR|   '.$j_smr_20_22_kemarin.'|   '.$j_smr_20_22.'|  '.($j_smr_20_22_kemarin-$j_smr_20_22).chr(10);
+$txt .= 'STT|   '.$j_stt_20_22_kemarin.'|   '.$j_stt_20_22.'|  '.($j_stt_20_22_kemarin-$j_stt_20_22).chr(10);
+$txt .= 'TGG|   '.$j_tgg_20_22_kemarin.'|   '.$j_tgg_20_22.'|  '.($j_tgg_20_22_kemarin-$j_tgg_20_22).chr(10);
+$txt .= 'TMD|   '.$j_tmd_20_22_kemarin.'|   '.$j_tmd_20_22.'|  '.($j_tmd_20_22_kemarin-$j_tmd_20_22).chr(10);
+$txt .= 'TSN|   '.$j_tsn_20_22_kemarin.'|   '.$j_tsn_20_22.'|  '.($j_tsn_20_22_kemarin-$j_tsn_20_22).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_20_22.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_20_22.chr(10);
+$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+
+$txt .= '22:00-00:00'.chr(10);
+$txt .= '```'.chr(10);
+$txt .= 'STO|PRAG|REAL|DEV'.chr(10);
+$txt .= '-----------------'.chr(10);
+$txt .= 'AGN|   '.$j_agn_22_00_kemarin.'|   '.$j_agn_22_00.'|  '.($j_agn_22_00_kemarin-$j_agn_22_00).chr(10);
+$txt .= 'BOT|   '.$j_bot_22_00_kemarin.'|   '.$j_bot_22_00.'|  '.($j_bot_22_00_kemarin-$j_bot_22_00).chr(10);
+$txt .= 'LKT|   '.$j_lkt_22_00_kemarin.'|   '.$j_lkt_22_00.'|  '.($j_lkt_22_00_kemarin-$j_lkt_22_00).chr(10);
+$txt .= 'LMP|   '.$j_lmp_22_00_kemarin.'|   '.$j_lmp_22_00.'|  '.($j_lmp_22_00_kemarin-$j_lmp_22_00).chr(10);
+$txt .= 'LOB|   '.$j_lob_22_00_kemarin.'|   '.$j_lob_22_00.'|  '.($j_lob_22_00_kemarin-$j_lob_22_00).chr(10);
+$txt .= 'MBD|   '.$j_mbd_22_00_kemarin.'|   '.$j_mbd_22_00.'|  '.($j_mbd_22_00_kemarin-$j_mbd_22_00).chr(10);
+$txt .= 'MLA|   '.$j_mla_22_00_kemarin.'|   '.$j_mla_22_00.'|  '.($j_mla_22_00_kemarin-$j_mla_22_00).chr(10);
+$txt .= 'PAA|   '.$j_paa_22_00_kemarin.'|   '.$j_paa_22_00.'|  '.($j_paa_22_00_kemarin-$j_paa_22_00).chr(10);
+$txt .= 'PLL|   '.$j_pll_22_00_kemarin.'|   '.$j_pll_22_00.'|  '.($j_pll_22_00_kemarin-$j_pll_22_00).chr(10);
+$txt .= 'SAN|   '.$j_san_22_00_kemarin.'|   '.$j_san_22_00.'|  '.($j_san_22_00_kemarin-$j_san_22_00).chr(10);
+$txt .= 'SBR|   '.$j_sbr_22_00_kemarin.'|   '.$j_sbr_22_00.'|  '.($j_sbr_22_00_kemarin-$j_sbr_22_00).chr(10);
+$txt .= 'SEM|   '.$j_sem_22_00_kemarin.'|   '.$j_sem_22_00.'|  '.($j_sem_22_00_kemarin-$j_sem_22_00).chr(10);
+$txt .= 'SGK|   '.$j_sgk_22_00_kemarin.'|   '.$j_sgk_22_00.'|  '.($j_sgk_22_00_kemarin-$j_sgk_22_00).chr(10);
+$txt .= 'SMR|   '.$j_smr_22_00_kemarin.'|   '.$j_smr_22_00.'|  '.($j_smr_22_00_kemarin-$j_smr_22_00).chr(10);
+$txt .= 'STT|   '.$j_stt_22_00_kemarin.'|   '.$j_stt_22_00.'|  '.($j_stt_22_00_kemarin-$j_stt_22_00).chr(10);
+$txt .= 'TGG|   '.$j_tgg_22_00_kemarin.'|   '.$j_tgg_22_00.'|  '.($j_tgg_22_00_kemarin-$j_tgg_22_00).chr(10);
+$txt .= 'TMD|   '.$j_tmd_22_00_kemarin.'|   '.$j_tmd_22_00.'|  '.($j_tmd_22_00_kemarin-$j_tmd_22_00).chr(10);
+$txt .= 'TSN|   '.$j_tsn_22_00_kemarin.'|   '.$j_tsn_22_00.'|  '.($j_tsn_22_00_kemarin-$j_tsn_22_00).chr(10);
+$txt  .= '```'.chr(10);
+$txt  .= '_______________________________________'.chr(10);
+$txt  .= 'TOTAL PRAGNOSA: '.$total_kemarin_22_00.chr(10);
+$txt  .= 'TOTAL REALISASI: '.$total_22_00.chr(10);
+$txt  .= '_______________________________________'.chr(10);
+//$contents=file_get_contents("https://api.telegram.org/bot875334723:AAFwAwZ_GQuJV8jDsWvlxcZ6WmaZraThtqY/sendMessage?chat_id=-330641532&text=".urlencode($txt)."&parse_mode=markdown");
+$txt  = "";
+echo $txt;
 
 ?>

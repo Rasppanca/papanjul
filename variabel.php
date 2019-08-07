@@ -505,8 +505,8 @@ $j_tsn_18_20_kemarin = 0;
 $j_tsn_20_22_kemarin = 0;
 $j_tsn_22_00_kemarin = 0;
 
-
 $tgl=date('Y-m-d');
+$tglindo=date('d-m-Y');
 
 $tgl_kemarin=date('Y-m-d',strtotime('-1 days', strtotime($tgl)));
 
